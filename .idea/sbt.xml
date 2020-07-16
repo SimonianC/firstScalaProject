@@ -7,6 +7,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Consumer" />
+            <option value="$PROJECT_DIR$/Model" />
+            <option value="$PROJECT_DIR$/Producer" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
