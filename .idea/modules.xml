@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Consumer/Consumer.iml" filepath="$PROJECT_DIR$/Consumer/Consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Model/Model.iml" filepath="$PROJECT_DIR$/Model/Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Producer.iml" filepath="$PROJECT_DIR$/.idea/modules/Producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/firstScalaProject.iml" filepath="$PROJECT_DIR$/.idea/modules/firstScalaProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/firstScalaProject-build.iml" filepath="$PROJECT_DIR$/.idea/modules/firstScalaProject-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/firstScalaProject.Model.iml" filepath="$PROJECT_DIR$/.idea/modules/firstScalaProject.Model.iml" />
       <module fileurl="file://$PROJECT_DIR$/producer/producer.iml" filepath="$PROJECT_DIR$/producer/producer.iml" />
     </modules>
   </component>
