@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="Consumer,Model,Producer,firstScalaProject,firstScalaProject.Model,firstScalaProject.firstScalaProject,firstscalaproject,util" />
+    <profile name="sbt 1" modules="Consumer,Model,Producer,consumer,consumer.consumer,firstScalaProject,firstScalaProject.Model,firstScalaProject.firstScalaProject,firstscalaproject,producer.Producer,util" />
   </component>
 </project>
