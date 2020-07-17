@@ -1,0 +1,5 @@
+package pers
+
+class PersSerialize {
+
+}

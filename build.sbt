@@ -14,7 +14,7 @@ lazy val commonDependencies = Seq(
   )
 
 lazy val Consumer = (project in file("Consumer")).settings(
-  libraryDependencies ++= commonDependencies ++ Seq("com.datastax.spark" %% "spark-cassandra-connector" % "3.0-alpha"),
+  libraryDependencies ++= commonDependencies ++ Seq("com.datastax.spark" %% "spark-cassandra-connector" % "3.0-alpha","org.apache.spark" %% "spark-sql" % sparkVersion),
   name := "Consumer"
 
 )
@@ -25,7 +25,7 @@ lazy val Producer = (project in file("Producer")).settings(
 
 )
 lazy val Model = (project in file("Model")).settings(
-  libraryDependencies ++= commonDependencies
-
+  libraryDependencies ++=Seq("org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion),
+  name := "Model"
 )
 

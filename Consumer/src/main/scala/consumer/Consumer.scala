@@ -1,6 +1,6 @@
 package consumer
 
-
+import org.apache.spark.sql.Encoder
 import com.datastax.spark.connector._
 import com.datastax.spark.connector.SomeColumns
 //import org.apache.kafka.common.TopicPartition

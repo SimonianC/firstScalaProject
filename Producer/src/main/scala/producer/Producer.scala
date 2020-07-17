@@ -37,7 +37,7 @@ object Producer extends App{
     //implicit val ec = ExecutionContext.global
     persRdd.collect.foreach( el => {
 
-          val record = new ProducerRecord("test2", el.split(",")(0), el  )
+          val record = new ProducerRecord("mind7", el.split(",")(0), el  )
           producer.send(record)
 
     })
