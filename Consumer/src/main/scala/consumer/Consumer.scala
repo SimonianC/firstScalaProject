@@ -8,6 +8,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
+import pers.PersDeserializer
 
 object Consumer extends App {
   val conf = new SparkConf(true)
@@ -29,8 +30,8 @@ object Consumer extends App {
   //SparkStreaming configuration for KAFKA
   val kafkaParams = Map(
     "bootstrap.servers" -> "localhost:9092",
-    "key.deserializer" -> classOf[StringDeserializer],
-    "value.deserializer" -> classOf[StringDeserializer],
+    "key.deserializer" -> classOf[PersDeserializer],
+    "value.deserializer" -> classOf[PersDeserializer],
     "group.id" -> "use_a_separate_group_id_for_each_stream",
     "auto.offset.reset" -> "earliest",
     "enable.auto.commit" ->  (false : java.lang.Boolean)
