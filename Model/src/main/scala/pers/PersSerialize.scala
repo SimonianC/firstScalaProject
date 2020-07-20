@@ -17,13 +17,15 @@ class PersSerialize extends Serializer[Pers]{
     val propertyName : String = if(isKey)  "key.serializer.encoding" else  "value.serializer.encoding"
     var encodingValue = configs.get(propertyName)
     if (encodingValue == null) {
-      encodingValue = configs.get("deserializer.encoding")
+      encodingValue = configs.get("serializer.encoding")
     }
     if (this.isPerson(encodingValue))
       encoding =  encodingValue.toString
   }
 
   override def serialize(topic: String, data: Pers): Array[Byte] = {
+    println(topic)
+    println(data.toString)
     try {
       if (data == null) {
          null

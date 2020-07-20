@@ -9,8 +9,7 @@ val sparkVersion = "2.4.3"
 
 lazy val commonDependencies = Seq(
     "org.apache.spark" %% "spark-streaming" % sparkVersion ,
-    "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion,
-
+    "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion
   )
 
 lazy val Consumer = (project in file("Consumer"))

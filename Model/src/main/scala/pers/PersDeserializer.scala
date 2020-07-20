@@ -2,7 +2,7 @@ package pers;
 
 import java.io.UnsupportedEncodingException
 import java.util
-
+import java.io.{ObjectInputStream, ByteArrayInputStream}
 import org.apache.kafka.common.errors.SerializationException
 import org.apache.kafka.common.serialization.{Deserializer, StringDeserializer}
 
@@ -29,8 +29,16 @@ class PersDeserializer extends Deserializer[Pers]{
       if (data == null)
         null;
       else {
-        val tmp = data.toString.split(",")
-        Pers(tmp(0).toInt, tmp(1), tmp(2).toInt)
+        val tmp2 = data.map(_.toChar).mkString
+        //println("ceci est le test : "+tmp2)
+          val tmp = tmp2.split(",")
+//          println("id : "+tmp(0))
+//          println("nom : "+tmp(1))
+//          println("age : "+tmp(2))
+          val res = Pers(tmp(0).toInt, tmp(1), tmp(2).toInt)
+          println(res.toString)
+        res
+
       }
     } catch {
       case e : UnsupportedEncodingException =>throw new SerializationException("Error when deserializing byte[] to string due to unsupported encoding " + encoding)
