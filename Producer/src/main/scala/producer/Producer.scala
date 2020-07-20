@@ -21,7 +21,7 @@ object Producer extends App{
     val props = new Properties()
     props.put("bootstrap.servers", "localhost:9092")
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
-    props.put("value.serializer", classOf[PersSerialize])//classOf[PersSerialize])//"org.apache.kafka.common.serialization.StringSerializer")
+    props.put("value.serializer", classOf[PersSerialize])
     props.put("group.id", "something")
 
     val conf = new SparkConf(true)
@@ -41,14 +41,7 @@ object Producer extends App{
 
     // Read the CSV file with the SparkContext
     val persRdd = sc.textFile("/home/mind7/Bureau/batch_folder/*.csv")
-    // TODO optimize with spark
-    //implicit val ec = ExecutionContext.global
-//    persRdd.collect.foreach( el => {
-//
-//          val record = new ProducerRecord("mind7", el.split(",")(0), Pers(el)  )
-//          producer.send(record)
-//
-//    })
+
 
     persRdd.mapPartitions( iterEl =>{
         iterEl.map( stringEl=> {

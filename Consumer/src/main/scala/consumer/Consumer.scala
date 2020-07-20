@@ -37,9 +37,6 @@ object Consumer extends App {
     "enable.auto.commit" ->  (false : java.lang.Boolean)
   )
 
-
-  //val offsets = Map(new TopicPartition("test2", 0) -> 2L)
-
   val columns = SomeColumns("id", "nom", "age")
   println("creation dstream")
   val dstream = KafkaUtils.createDirectStream[String, Pers](
@@ -49,17 +46,8 @@ object Consumer extends App {
 
   println("execution du foreach")
   dstream.foreachRDD( rdd => {
-    //print(rdd.collect())
-    println("nonnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
     rdd.map(el =>{
-      println("ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
-
-      println(el.value.toString)
-      println("key : "+el.key)
-      println("value : "+el.value)
       (el.value.id,el.value.nom,el.value.age)
-
-
     }).saveToCassandra("test","pers",columns)
   })
 
